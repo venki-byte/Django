@@ -1,0 +1,15 @@
+<h1>Task List</h1>
+<a href = "/tasks/add/">Add Task</a>
+<ul>
+    {% for task in tasks %}
+    <li>
+        <b>{{task.title}}</b> - {{task.description}}
+        {% if task.completed %}
+        <span style="color:green;">(Completed)</span>
+        {%else%}
+        <a href="/tasks/complete/{{task.id}}/">Mark as Completed</a>
+        {% endif %}
+        <a href="/tasks/delete/{{task.id}}/" style="color: red;">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
