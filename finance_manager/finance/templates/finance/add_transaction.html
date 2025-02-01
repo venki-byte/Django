@@ -1,0 +1,18 @@
+
+<h1>Add Transaction</h1>
+<form method="post">
+    {% csrf_token %}
+    <label>Title:</label>
+    <input type="text" name="title" required><br>
+    <label>Amount:</label>
+    <input type="number" name="amount" step="0.01" required><br>
+    <label>Category:</label>
+    <select name="category">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+    </select><br>
+    <label>Date:</label>
+    <input type="date" name="date" required><br>
+    <button type="submit">Add</button>
+</form>
+<a href="/finance/">Back to transaction List</a>

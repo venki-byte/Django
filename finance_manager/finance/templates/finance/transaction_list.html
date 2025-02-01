@@ -1,0 +1,26 @@
+<h1> Transaction List </h1>
+<a href = "/finance/add"> Add Transaction</a>
+<table border = "1">
+    <tr>
+        <th>Title</th>
+        <th>Amount</th>
+        <th>Category</th>
+        <th>Date</th>
+        <th>Actions</th>
+    </tr>
+    {% for transaction in transactions%}
+    <tr>
+        <td>{{transaction.title}}</td>
+        <td>{{transaction.amount}}</td>
+        <td>{{transaction.get_category_display}}</td>
+        <td>{{transaction.date}}</td>
+        <td>
+            <a href = "/finance/delete/{{transaction.id}}/" style="color: red;">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+<h3>Total Income: {{total_income}}</h3>
+<h3>Total Expense: {{total_expense}} </h3>
+<h3>Savings: {{savings}}</h3>
